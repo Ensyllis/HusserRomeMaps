@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>City Transition Probabilities</title>
+    <script>
+        function redirectToCity() {
+            var select = document.getElementById("citySelect");
+            var city = select.options[select.selectedIndex].value;
+            if (city) {
+                window.location.href = "/city/" + encodeURIComponent(city);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Select a City</h1>
+    <select id="citySelect" onchange="redirectToCity()">
+        <option value="">Choose a city</option>
+        {% for city in cities %}
+            <option value="{{ city }}">{{ city }}</option>
+        {% endfor %}
+    </select>
+
+    <h2>Or choose from the list below:</h2>
+    <ul>
+    {% for city in cities %}
+        <li><a href="{{ url_for('city_map', city=city) }}">{{ city }}</a></li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
