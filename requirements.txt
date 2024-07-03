@@ -315,7 +315,6 @@ pytorch-lightning==2.2.1
 pytorch-metric-learning==2.5.0
 pytweening==1.0.7
 pytz==2023.3.post1
-pywinpty==2.0.13
 PyYAML==6.0.1
 pyzmq==25.1.1
 qtconsole==5.5.2
